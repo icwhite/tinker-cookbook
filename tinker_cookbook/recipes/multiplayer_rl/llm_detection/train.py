@@ -20,7 +20,7 @@ class CLIConfig:
     max_tokens: int = 20
     eval_every: int = 5
     save_every: int = 20
-    wandb_project: str | None = "tinker"
+    wandb_project: str | None = "llm-detection"
     wandb_name: str | None = None
     log_path: str | None = None
 
@@ -36,7 +36,7 @@ def build_config(cli_config: CLIConfig) -> train.Config:
     if cli_config.log_path is not None:
         log_path = cli_config.log_path
     else:
-        log_path = f"/tmp/tinker-examples/twenty-questions-rl/{run_name}"
+        log_path = f"/tmp/tinker-examples/llm-detection-rl/{run_name}"
     if cli_config.wandb_name is not None:
         wandb_name = cli_config.wandb_name
     else:
